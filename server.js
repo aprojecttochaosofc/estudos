@@ -24,26 +24,7 @@ wss.on("connection", (ws) => {
 
     ws.on("message", (msg) => {
         const data = JSON.parse(msg.toString());
-        if (data.message == "startserver") {
-            inicServer(ws, data);
-        }
-
-        if (data.message == "getusers") {
-            userlogued(ws, data);
-        }
-
-        if (data.message === "login") {
-            loginserver(ws, data);
-        }
-
-        if (data.message === "senduserid") {
-            userlogued(ws, data);
-        }
-
-        if (data.message === "quitserver") {
-            logout(ws, data);
-            
-        }
+        
     });
 
     
