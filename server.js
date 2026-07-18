@@ -18,6 +18,12 @@ wss.on("connection", (ws) => {
 
     ws.on("message", (msg) => {
         const data = JSON.parse(msg.toString());
+
+     if(data.join=="newuser"){
+         ws.send(JSON.stringify({
+                message: "deu certo", 
+            }));
+     }
         
     });
 
