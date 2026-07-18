@@ -1,14 +1,8 @@
 const express = require("express");
 const http = require("http");
 const WebSocket = require("ws");
-
-const logout = require("./logout");
-const loginserver = require("./loginserver");
-const callconfigs = require("./config");
-const userlogued = require("./userslogued");
-const inicServer = require("./inicServer");
-const homepage = require("./home");
-const connectserver = require("./connectserver");
+ 
+const homepage = require("./home"); 
 
 const app = express();
 
