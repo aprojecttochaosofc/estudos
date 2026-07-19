@@ -2,13 +2,18 @@ const express = require("express");
 const http = require("http");
 const WebSocket = require("ws");
  
-const homepage = require("./home"); 
+const homepage = require("./home");
+const cadastro = require("./cadastro"); 
 
 const app = express();
 
 
 app.get("/", (req, res) => {
     homepage(req, res);
+});
+
+app.get("/cadastro", (req, res) => {
+    cadastro(req, res);
 });
 
 const server = http.createServer(app);
