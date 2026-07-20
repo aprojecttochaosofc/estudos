@@ -6,6 +6,7 @@ const homepage = require("./home");
 const cadastro = require("./cadastro");
 const usercreate = require("./usercreate");
 const updateplayer = require("./updateplayer");
+const disconnectuser = require("./usersconfig/disconnectuser");
 
 const app = express();
 
@@ -32,6 +33,9 @@ wss.on("connection", (ws) => {
         }
         if (data.message == "updateplayer") {
             updateplayer(ws, data);
+        }
+        if (data.message == "disconnectuser") {
+            disconnectuser(ws, data);
         }
     });
 
