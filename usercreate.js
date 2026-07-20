@@ -7,8 +7,9 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false }
 });
 
-module.exports = function userslogued(ws, data) {
-  ws.send(JSON.stringify({
-    "message":"userconected"
-  }));
+module.exports = function usercreate(ws, data) {
+   ws.send(JSON.stringify({
+                message: "newuser",
+                user:data.user
+            }));
 };
