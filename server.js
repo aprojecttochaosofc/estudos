@@ -1,13 +1,14 @@
 const express = require("express");
 const http = require("http");
 const WebSocket = require("ws");
- 
+
 const homepage = require("./home");
 const cadastro = require("./cadastro");
-const usercreate = require("./usercreate"); 
+const usercreate = require("./usercreate");
 
 const app = express();
 
+const players = {};
 
 app.get("/", (req, res) => {
     homepage(req, res);
@@ -25,13 +26,10 @@ wss.on("connection", (ws) => {
     ws.on("message", (msg) => {
         const data = JSON.parse(msg.toString());
 
-     if(data.message=="startserver"){
-        usercreate(ws,data)
-     }
-        
+        if (data.message == "startserver") {
+            usercreate(ws, data, players);
+        }
     });
-
-    
 
 });
 
