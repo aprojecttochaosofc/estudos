@@ -4,8 +4,8 @@ const WebSocket = require("ws");
 
 const homepage = require("./home");
 const cadastro = require("./cadastro");
-const usercreate = require("./usercreate");
-const updateplayer = require("./updateplayer");
+const usercreate = require("./usersconfig/usercreate");
+const updateplayer = require("./usersconfig/updateplayer");
 const disconnectuser = require("./usersconfig/disconnectuser");
 
 const app = express();
