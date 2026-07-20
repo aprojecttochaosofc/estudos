@@ -26,7 +26,8 @@ wss.on("connection", (ws) => {
 
      if(data.message=="startserver"){
          ws.send(JSON.stringify({
-                message: "newuser", 
+                message: "newuser",
+                user:data.user
             }));
      }
         
