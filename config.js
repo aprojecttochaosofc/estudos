@@ -1,4 +1,4 @@
-module.exports = function callconfigs(types) {
+module.exports = function callconfigs(types) { 
   switch(types){
 
     case 'postgre':
