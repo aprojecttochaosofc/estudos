@@ -26,7 +26,7 @@ wss.on("connection", (ws) => {
 
      if(data.message=="newuser"){
          ws.send(JSON.stringify({
-                message: "deu certo", 
+                message: "newuser", 
             }));
      }
         
