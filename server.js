@@ -3,7 +3,8 @@ const http = require("http");
 const WebSocket = require("ws");
  
 const homepage = require("./home");
-const cadastro = require("./cadastro"); 
+const cadastro = require("./cadastro");
+const usercreate = require("./usercreate"); 
 
 const app = express();
 
@@ -25,10 +26,7 @@ wss.on("connection", (ws) => {
         const data = JSON.parse(msg.toString());
 
      if(data.message=="startserver"){
-         ws.send(JSON.stringify({
-                message: "newuser",
-                user:data.user
-            }));
+        usercreate(ws,data)
      }
         
     });
