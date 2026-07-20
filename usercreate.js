@@ -1,4 +1,3 @@
-
 const { Pool } = require("pg");
 const callconfigs = require("./config");
 
@@ -7,9 +6,17 @@ const pool = new Pool({
     ssl: { rejectUnauthorized: false }
 });
 
-module.exports = function usercreate(ws, data) {
-   ws.send(JSON.stringify({
-                message: "newuser",
-                user:data.user
-            }));
+module.exports = function usercreate(ws, data, players) {
+
+    players[data.user] = {
+        ws: ws,
+        user: data.user
+    };
+
+    console.log(players);
+
+    ws.send(JSON.stringify({
+        message: "newuser",
+        user: data.user
+    }));
 };
