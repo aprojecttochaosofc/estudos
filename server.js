@@ -32,7 +32,7 @@ wss.on("connection", (ws) => {
             usercreate(ws, data, players);
         }
         if (data.message == "updateplayer") {
-            updateplayer(ws, data);
+            updateplayer(ws, data, players);
         }
         if (data.message == "disconnectuser") {
             disconnectuser(ws, data);
