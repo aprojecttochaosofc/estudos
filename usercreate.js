@@ -16,7 +16,7 @@ module.exports = function usercreate(ws, data, players) {
     console.log(players);
 
     ws.send(JSON.stringify({
-        message: "newuser",
+        message: "connected",
         user: data.user
     }));
 };
