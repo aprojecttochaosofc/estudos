@@ -7,6 +7,7 @@ const cadastro = require("./cadastro");
 const usercreate = require("./usersconfig/usercreate");
 const updateplayer = require("./usersconfig/updateplayer");
 const disconnectuser = require("./usersconfig/disconnectuser");
+const snapshot = require("./snapshot");
 
 const app = express();
 
@@ -40,7 +41,9 @@ wss.on("connection", (ws) => {
     });
 
 });
-
+setInterval(() => {
+    snapshot(players);
+}, 50);
 server.listen(process.env.PORT || 3000, () => {
     console.log("Servidor online");
 });
