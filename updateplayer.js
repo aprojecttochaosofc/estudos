@@ -1,10 +1,7 @@
 
 
 
-module.exports = function cadastro(req, res) {
-
-    res.send(`
-    cadastro
-    `);
+module.exports = function updateplayer(req, res) {
+ 
 
 };
