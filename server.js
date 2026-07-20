@@ -5,6 +5,7 @@ const WebSocket = require("ws");
 const homepage = require("./home");
 const cadastro = require("./cadastro");
 const usercreate = require("./usercreate");
+const updateplayer = require("./updateplayer");
 
 const app = express();
 
@@ -28,6 +29,9 @@ wss.on("connection", (ws) => {
 
         if (data.message == "startserver") {
             usercreate(ws, data, players);
+        }
+        if (data.message == "updateplayer") {
+            updateplayer(ws, data);
         }
     });
 
