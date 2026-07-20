@@ -24,7 +24,7 @@ wss.on("connection", (ws) => {
     ws.on("message", (msg) => {
         const data = JSON.parse(msg.toString());
 
-     if(data.message=="newuser"){
+     if(data.message=="startserver"){
          ws.send(JSON.stringify({
                 message: "newuser", 
             }));
